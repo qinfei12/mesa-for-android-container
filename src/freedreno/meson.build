@@ -1,6 +1,6 @@
 # Copyright © 2018 Rob Clark
 # SPDX-License-Identifier: MIT
-
+conf.set('HAVE_KGSL', true)
 inc_freedreno = include_directories(['.', './registers', './registers/adreno', './common'])
 inc_freedreno_rnn = include_directories('rnn')
 
