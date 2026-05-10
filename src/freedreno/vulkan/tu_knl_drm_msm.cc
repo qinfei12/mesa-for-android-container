@@ -251,11 +251,11 @@ tu_drm_is_memory_type_supported(int fd, uint32_t flags)
 static VkResult
 msm_device_init(struct tu_device *dev)
 {
-   int fd = open(dev->physical_device->fd_path, O_RDWR | O_CLOEXEC);
+   int fd = open("/dev/dri/renderD128", O_RDWR | O_CLOEXEC);
    if (fd < 0) {
       return vk_startup_errorf(
             dev->physical_device->instance, VK_ERROR_INITIALIZATION_FAILED,
-            "failed to open device %s", dev->physical_device->fd_path);
+            "failed to open forced renderD128");
    }
 
    int ret;
