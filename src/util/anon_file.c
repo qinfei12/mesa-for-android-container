@@ -119,10 +119,10 @@ get_or_create_user_temp_dir(void) {
 
     env = os_get_option("XDG_RUNTIME_DIR");
     if (env && env[0] != '\0') {
-        n = asprintf(&buf, "%s", env);
-        if (n < 0)
-           return NULL;
-        return buf;
+    n = asprintf(&buf, "%s", env);
+    if (n < 0)
+       return NULL;
+    return buf;
     }
 
     n = asprintf(&buf, "/tmp/xdg-runtime-mesa-%ld", (long)getuid());
